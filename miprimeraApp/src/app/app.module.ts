@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
     BrowserModule
   ],
   providers: [],
+ // voy a arrancar la página con el método AppComponent 
  bootstrap: [AppComponent]
 })
 export class AppModule { }

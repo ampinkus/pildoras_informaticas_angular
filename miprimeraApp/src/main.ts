@@ -7,6 +7,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule)
+// aqui se especifica cual es el módulo raiz de la applicacion, en este caso AppModule
+platformBrowserDynamic().bootstrapModule(AppModule) 
   .catch(err => console.error(err));
