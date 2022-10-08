@@ -21,8 +21,8 @@ export class EmpleadoComponent implements OnInit {
     return this.empresa
   }
  */
-
-  llamaEmpresa(dato:String){ // lo unico que hace es tomar un valor de cadena de caracteres
+// lo unico que hace es que este disponible el valor de la cadena empresa.value.  Tiene que ser String o any
+  llamaEmpresa(dato:any){ 
   }
 
 }
