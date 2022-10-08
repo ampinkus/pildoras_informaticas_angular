@@ -1,7 +1,7 @@
 <p>Nombre del empleado: {{nombre}}</p>
 <!-- Cuando tipeo el apellido que me vaya saliendo en la pantalla, apellido.value es el valor del texto -->
 <p>Apellido del empleado: {{apellido.value}}</p>
-Introduce el apellido del empledo: <input type="text" #apellido (keyup)="0"> <!-- debo poner (keyup)="0"  -->
+Introduce el apellido del empledo: <input type="text" #apellido (keyup)="0" [disabled] = "habilitacionCuadro"> <!-- debo poner (keyup)="0"  -->
 <br>
 
 
@@ -12,11 +12,22 @@ Introduce el apellido del empledo: <input type="text" #apellido (keyup)="0"> <!-
 
 <!-- Puedo usar metodos en las interpolaciones -->
 <p>Empresa del empleado: {{empresa.value}}</p>
-Introduce el nombre de la empresa: <input type="text" #empresa>
+<!-- Creo un binding de la propiedad disabled con el valor de la variable habilotacionCuadro -->
+Introduce el nombre de la empresa: <input type="text" #empresa  >
 <br>
 <br>
 <!-- Cuando aprieto el boton llamo a una funcion llama empresa que toma el valor del campo input #empresa -->
 <!-- así cuando lo aprieto tengo en empresa.value el texto que tengo que presentar.   -->
 <input type="button" value="Empresa" (click)="llamaEmpresa(empresa.value)"/>
+<br>
+<br>
+La impresa ingresada se llama: {{razonSocial}} 
+<br>
+<br>
+<!-- usuarioRegistrdo me cambia el valor de la propiedad checked  -->
+Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado"> 
+{{getRegistroUsuario()}}
+
+
 
  
