@@ -11,10 +11,13 @@ export class EmpleadoComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   //creo attributos del empleado
   nombre = 'Fredi';
   // apellido = 'Pinkus';
-  edad = 60;
+  edad = 10; // es una constante
+
+  
 
   habilitacionCuadro = true; // si es verdadero el cuadro de texto del apellido se encuentra deshabilitado
 

@@ -1,22 +1,21 @@
 <p>Nombre del empleado: {{nombre}}</p>
 <!-- Cuando tipeo el apellido que me vaya saliendo en la pantalla, apellido.value es el valor del texto -->
 <p>Apellido del empleado: {{apellido.value}}</p>
-Introduce el apellido del empledo: <input type="text" #apellido (keyup)="0" [disabled] = "habilitacionCuadro"> <!-- debo poner (keyup)="0"  -->
+Introduce el apellido del empleado: <input type="text" #apellido (keyup)="0" [disabled] = "habilitacionCuadro"> <!-- debo poner (keyup)="0"  -->
 <br>
-
 
 <!-- Puedo usar expresiones en las interpolaciones -->
 <!-- <p>Edad del empleado: {{edad + 4}}</p>  -->
 <!-- Puedo usar condicionales -->
 <p>Empresa del empleado: {{edad < 18? "Menor de edad":"Mayor de edad" }}</p>
 
-<!-- Puedo usar metodos en las interpolaciones -->
+<!-- Puedo usar métodos en las interpolaciones -->
 <p>Empresa del empleado: {{empresa.value}}</p>
-<!-- Creo un binding de la propiedad disabled con el valor de la variable habilotacionCuadro -->
+<!-- Creo un binding de la propiedad disabled con el valor de la variable habilitacionCuadro -->
 Introduce el nombre de la empresa: <input type="text" #empresa  >
 <br>
 <br>
-<!-- Cuando aprieto el boton llamo a una funcion llama empresa que toma el valor del campo input #empresa -->
+<!-- Cuando aprieto el botón llamo a una función llama empresa que toma el valor del campo input #empresa -->
 <!-- así cuando lo aprieto tengo en empresa.value el texto que tengo que presentar.   -->
 <input type="button" value="Empresa" (click)="llamaEmpresa(empresa.value)"/>
 <br>
