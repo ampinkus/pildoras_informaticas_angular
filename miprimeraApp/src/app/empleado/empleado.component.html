@@ -1,21 +1,25 @@
 <p>Nombre del empleado: {{nombre}}</p>
 <!-- Cuando tipeo el apellido que me vaya saliendo en la pantalla, apellido.value es el valor del texto -->
 <p>Apellido del empleado: {{apellido.value}}</p>
-Introduce el apellido del empleado: <input type="text" #apellido (keyup)="0" [disabled] = "habilitacionCuadro"> <!-- debo poner (keyup)="0"  -->
+ 
+<!-- Creo un binding de la propiedad disabled con el valor de la variable habilitacionCuadro -->
+Introduce el apellido del empleado: <input type="text" #apellido   (keyup)="0"   [disabled]="habilitacionCuadro"> <!-- debo poner (keyup)="0"  -->
 <br>
 
+Numero de letras del apellido: {{numeroLetras - 1}} 
+<br>
 <!-- Puedo usar expresiones en las interpolaciones -->
 <!-- <p>Edad del empleado: {{edad + 4}}</p>  -->
 <!-- Puedo usar condicionales -->
-<p>Empresa del empleado: {{edad < 18? "Menor de edad":"Mayor de edad" }}</p>
+<p>Edad del empleado: {{edad < 18? "Menor de edad":"Mayor de edad" }}</p>
 
-<!-- Puedo usar métodos en las interpolaciones -->
+<!-- Aclaro que quiero usar el valor del campo empresa como empresa.value-->
 <p>Empresa del empleado: {{empresa.value}}</p>
-<!-- Creo un binding de la propiedad disabled con el valor de la variable habilitacionCuadro -->
+
 Introduce el nombre de la empresa: <input type="text" #empresa  >
 <br>
 <br>
-<!-- Cuando aprieto el botón llamo a una función llama empresa que toma el valor del campo input #empresa -->
+<!-- Cuando aprieto el botón llamo a una función llamaEmpresa que toma el valor del campo input #empresa -->
 <!-- así cuando lo aprieto tengo en empresa.value el texto que tengo que presentar.   -->
 <input type="button" value="Empresa" (click)="llamaEmpresa(empresa.value)"/>
 <br>
@@ -24,8 +28,9 @@ La impresa ingresada se llama: {{razonSocial}}
 <br>
 <br>
 <!-- usuarioRegistrdo me cambia el valor de la propiedad checked  -->
-Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado"> 
-{{getRegistroUsuario()}}
+Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado()"  > 
+{{getRegistroUsuario()}} <!--cuando pasa de 0 a 1 aparece y desaparece el tick en el cuadro -->
+{{getNumeroLetras()}} <!-- Cada vez que actualizo un dato de la página de forma dinámica se llama a este método -->
 
 
 
