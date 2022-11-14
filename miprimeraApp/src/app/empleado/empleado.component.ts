@@ -26,7 +26,7 @@ export class EmpleadoComponent implements OnInit {
     this.numeroLetras = 0;
   }
 
-  getNumeroLetras() {
+  getNumeroLetras() {  
     this.numeroLetras++;
   }
 

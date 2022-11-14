@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 @Component({ // decorador que acompaña a la clase AppComponent
   selector: 'app-root', 
 /* 
-   el selector que está en: 
+   este selector hace que en index.html al encontar: 
    <body>
       <app-root></app-root>
-  </body>
-  Por eso cuando voy a index.html se ejecuta este método
+    </body>
+   se navegue a 'app.component.html' junto con la página de estilo de 'app.component.css'
 */
   templateUrl: './app.component.html',  
   styleUrls: ['./app.component.css']
