@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class EmpleadoComponent implements OnInit {
   public razonSocial!: String;  // creo una varible RazonSocial para guardar el nombre de la empresa
   //creo attributos del empleado
-  nombre: String = 'Fredi';
+  public nombre: String = '';
   // apellido = 'Pinkus';
-  edad: Number = 10;
+  edad: Number = 0;
   numeroLetras = 0;
   habilitacionCuadro = false; // si es verdadero el cuadro de texto del apellido se encuentra deshabilitado
   usuarioRegistrado = false; // si está en true no aparece el tick del campo
@@ -22,7 +22,7 @@ export class EmpleadoComponent implements OnInit {
     //creo attributos del empleado
     this.nombre = 'Fredi';
     // apellido = 'Pinkus';
-    this.edad = 10;
+    this.edad = 18;
     this.numeroLetras = 0;
   }
 

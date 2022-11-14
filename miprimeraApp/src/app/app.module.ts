@@ -18,4 +18,4 @@ import { EmpleadoComponent } from './empleado/empleado.component';
  // voy a arrancar la página con el método AppComponent 
  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

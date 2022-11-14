@@ -1,3 +1,8 @@
 {
-    "liveServer.settings.port": 5545
+    "liveServer.settings.port": 5545,
+    "workbench.colorCustomizations": {
+        "editor.background": "#030116"
+    
+    },
+    "workbench.colorTheme": "Visual Studio Dark"
 }
