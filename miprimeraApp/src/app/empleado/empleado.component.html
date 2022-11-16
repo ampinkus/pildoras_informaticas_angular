@@ -20,17 +20,29 @@ Numero de letras del apellido: {{numeroLetras - 1}}
 Introduce el nombre de la empresa: <input type="text" #empresa  >
 <br>
 <br>
+
 <!-- Cuando aprieto el botón llamo a una función llamaEmpresa que toma el valor del campo input #empresa -->
 <!-- así cuando lo aprieto tengo en empresa.value el texto que tengo que presentar.   -->
 <input type="button" value="Empresa" (click)="llamaEmpresa(empresa.value)"/>
 <br>
 <br>
-La impresa ingresada se llama: {{razonSocial}} 
+
+<!-- con #email identifico el cuadro de texto.  Con 0 decimos que el evento se ejecute inmediatamente al levantar la tecla -->
+<!-- Property binding:  [disabled] entre corchetes asigno valores a la propiedad de acuerdo a una variable -->
+Introduce el email del empleado (para poder ingresarlo debe estar registrado): <input type="text" #email (keyup)="0" [disabled] = "habilitacionEmail"  >
 <br>
 <br>
-<!-- usuarioRegistrdo me cambia el valor de la propiedad checked  -->
+<!-- En el cuadro de texto aparece el correo a medida que tipeo el mismo -->
+El email ingresado es : {{email.value}} 
+<br>
+<br>
+
+
+<!-- La propiedad [checked] depende del valor de la variable usuarioregistrado, true aparece el tick en el checkbox  -->
+<!-- Cuando se hace click en el checkbox se llama a la función setUsuarioRegistrado, que activa una alerta  -->
 Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado()"  > 
-{{getRegistroUsuario()}} <!--cuando pasa de 0 a 1 aparece y desaparece el tick en el cuadro -->
+
+{{getRegistroUsuario()}} <!-- llamo a la función getRegistroUsuario() -->
 {{getNumeroLetras()}} <!-- Cada vez que actualizo un dato de la página de forma dinámica se llama a este método -->
 
 

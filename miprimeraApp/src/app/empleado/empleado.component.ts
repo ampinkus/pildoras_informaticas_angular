@@ -13,25 +13,27 @@ export class EmpleadoComponent implements OnInit {
   edad: Number = 0;
   numeroLetras = 0;
   habilitacionCuadro = false; // si es verdadero el cuadro de texto del apellido se encuentra deshabilitado
-  usuarioRegistrado = false; // si está en true no aparece el tick del campo
+  usuarioRegistrado = true; // si está en false no aparece el tick del campo, como se invoca luego la función getRegistroUsuario va a pasar a false
   textoDeRegistro = 'No hay nadie registrado'
+   // Creo una propiedad para controlar la posibilidad de habilitar o deshabilitar el ingreso del correo electrónico
+   habilitacionEmail:boolean = true; // inicial esta deshabilitado
 
   constructor() { }
 
   ngOnInit(): void {
-    //creo attributos del empleado
+    //creo atributos del empleado
     this.nombre = 'Fredi';
     // apellido = 'Pinkus';
     this.edad = 18;
-    this.numeroLetras = 0;
+    this.numeroLetras = 0; // cuando inicializo la página es cero
   }
 
-  getNumeroLetras() {  
+  getNumeroLetras() {
     this.numeroLetras++;
   }
 
   getRegistroUsuario() {
-    this.usuarioRegistrado = false; // cuando la llamo pone 
+    this.usuarioRegistrado = false; // cuando la llamo elimina el tick en el checkbox, el archivo html invoca esta opción cuando arranca la página
   }
 
   // lo unico que hace es que este disponible el valor de la cadena empresa.value.  Tiene que ser String o any
@@ -39,9 +41,11 @@ export class EmpleadoComponent implements OnInit {
     this.razonSocial = dato; //guardo en razonSocial el nombre ingresado de la empresa 
   }
 
-  setUsuarioRegistrado(){ // presento un alerta cuando hago click en el cuadro
+  setUsuarioRegistrado() { // presento un alerta cuando hago click en el cuadro
     alert('El usuario se acaba de registrar');
-     
+    this.habilitacionEmail = false ; // habilito el campo para ingresar el Email
   }
+
+
 
 }
