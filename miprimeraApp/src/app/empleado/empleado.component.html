@@ -29,7 +29,7 @@ Introduce el nombre de la empresa: <input type="text" #empresa  >
 
 <!-- con #email identifico el cuadro de texto.  Con 0 decimos que el evento se ejecute inmediatamente al levantar la tecla -->
 <!-- Property binding:  [disabled] entre corchetes asigno valores a la propiedad de acuerdo a una variable -->
-Introduce el email del empleado (para poder ingresarlo debe estar registrado): <input type="text" #email (keyup)="0" [disabled] = "habilitacionEmail"  >
+Introduce el email del empleado (para poder ingresarlo debe estar registrado): <input type="text" #email (keyup)="0" [disabled] = "habilitacionEmail">
 <br>
 <br>
 <!-- En el cuadro de texto aparece el correo a medida que tipeo el mismo -->
@@ -37,10 +37,20 @@ El email ingresado es : {{email.value}}
 <br>
 <br>
 
+<!-- Aqui interpolamos el valor de textoDeRegistro -->
+{{textoDeRegistro}} 
+<br>
 
-<!-- La propiedad [checked] depende del valor de la variable usuarioregistrado, si es true aparece el tick en el checkbox  -->
-<!-- Cuando se hace click en el checkbox se llama a la función setUsuarioRegistrado, que activa una alerta  -->
-Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado()"  > 
+<!-- La propiedad [checked] depende del valor de la variable usuarioregistrado, si es true aparece el tick en el checkbox,  -->
+<!-- Property binding: [property] = "contenido de una variable", la propiedad depende del contenido de la variable   ] -->
+<!-- Cuando se hace click en el checkbox se llama a la función setUsuarioRegistrado, que activa una alerta. Event binding:  (accion)="nombre funcion"  -->
+
+<!-- Para el caso de checkbox -->
+<!-- Registrado: <input type="checkbox" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado()"> -->
+
+<!-- Para el caso de radio button.  Con $event capturamos el objeto que se crea cuando hago click en el radio button y puedo usar sus atributos y métodos -->
+Registrado: <input type="radio" value = "si" name="nRegistro" (click)="setUsuarioRegistrado($event)"> 
+No registrado: <input type="radio" value = "no" name="nRegistro" (click)="setUsuarioRegistrado($event)" >
 
 {{getRegistroUsuario()}} <!-- llamo a la función getRegistroUsuario() -->
 {{getNumeroLetras()}} <!-- Cada vez que actualizo un dato de la página de forma dinámica se llama a este método -->
