@@ -1,0 +1,14 @@
+<h1 style="text-align: center">{{ title }}</h1>
+
+<form action="">
+  Ingrese el nombre:<input type="text" name="Nombre" [(ngModel)] = "nombre"/>
+  <br>
+
+  Ingrese el apellido:<input type="text" name="Apellido" [(ngModel)] = "apellido"/>
+  <br>
+
+  <input type="submit" value="Registrar" (click)="registrarUsuario()" >
+</form>
+<br>
+<!-- Interpolamos el mensaje que el usuario se registró -->
+<p *ngIf="registrado">{{mensaje}}</p>

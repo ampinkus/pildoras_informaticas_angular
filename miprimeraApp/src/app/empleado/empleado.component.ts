@@ -62,8 +62,12 @@ export class EmpleadoComponent implements OnInit {
     }
   }
 
+  // para el one way binding uso esta funcion 
   // tomo el valor del campo que llamo a esta función y lo envío a empresa
-  cambiaEmpresa(event: Event) {
-    this.empresa = (<HTMLInputElement>event.target).value;
-  }
+  // cambiaEmpresa(event: Event) {
+  //   this.empresa = (<HTMLInputElement>event.target).value;
+  // }
+
+  // para el two way binding uso:
+  
 }

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Mini Calculadora';
@@ -13,8 +13,20 @@ export class AppComponent {
   resultado: number = 0; // el campo resultado
 
   //creo los métodos para hacer los cálculos
-  
+
   sumar(): void {
-  this.resultado =  Number(this.numero1) + Number(this.numero2);
+    this.resultado = this.numero1 + this.numero2;
+  }
+
+  restar(): void {
+    this.resultado = this.numero1 - this.numero2;
+  }
+
+  multiplicar(): void {
+    this.resultado = this.numero1 * this.numero2;
+  }
+
+  dividir(): void {
+    this.resultado = this.numero1 / this.numero2;
   }
 }

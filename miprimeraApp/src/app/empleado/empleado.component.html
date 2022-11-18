@@ -18,8 +18,15 @@ Numero de letras del apellido: {{numeroLetras - 1}}
 
 <!-- con #empresa identifico el cuadro de texto -->
 <!-- Introduce el nombre de la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitacionCuadro" > -->
+
+<!-- para el one way binding habilito los dos renglones de código de abajo: -->
 <!-- hago un event binding: cuando introduzco en el campo un texto invoco la funcion cambiaEmpresa() -->
-Introduce el nombre de la empresa: <input type="text"  (input)="cambiaEmpresa($event)">
+<!-- Introduce el nombre de la empresa: <input type="text"  (input)="cambiaEmpresa($event)"> -->
+
+<!-- Two way binding -->
+<!-- Solo usando [(ngModel)]="propiedad con la que quiero hacer el binding" (empresa en este caso) hago el two way binding.-->
+<!-- No agrefgo ninguna función en typescript -->
+Introduce el nombre de la empresa: <input type="text" [(ngModel)]="empresa">
 <br>
 <br>
 

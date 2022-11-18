@@ -1,12 +1,21 @@
 <h1>{{ title }}</h1>
-<form>
-  <!-- Los campos de los dos numeros -->
-  <!-- Tenemos que agregar name="numero1" para relacionar el campo con el valor de la variable -->
-  Numero 1: <input type="text" [(ngModel)] = "numero1" name="numero1"/> ,<br />,<br /> 
-  Numero 2: <input type="text" [(ngModel)] = "numero2" name="numero2"  /> ,<br />,<br />
-  <!-- para enviar la informacion -->
-  <input type="submit" value="Sumar" (click)="sumar()">
-
-</form>
-
-<p>Resultado: {{resultado}}</p>
+<div class="container">
+  <form>
+    <!-- Los campos de los dos numeros -->
+    <!-- Tenemos que agregar name="numero1" para relacionar el campo con el valor de la variable -->
+    Numero 1: <input type="number" [(ngModel)]="numero1" name="numero1" />
+    <br /><br />
+    Numero 2: <input type="number" [(ngModel)]="numero2" name="numero2" />
+    <br />
+    <br />
+    <!-- para enviar la informacion -->
+    <input type="submit" value="Sumar" (click)="sumar()" class="btn btn-primary" />
+    <!-- para enviar la informacion -->
+    <input type="submit" value="Restar" (click)="restar()" class="btn btn-primary" />
+    <!-- para enviar la informacion -->
+    <input type="submit" value="Multiplicar" (click)="multiplicar()" class="btn btn-primary" />
+    <!-- para enviar la informacion -->
+    <input type="submit" value="Dividir" (click)="dividir()"  class="btn btn-primary"/>
+  </form>
+</div>
+<p>Resultado: {{ resultado }}</p>
