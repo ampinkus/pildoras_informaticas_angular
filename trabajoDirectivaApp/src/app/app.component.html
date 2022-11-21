@@ -1,14 +1,42 @@
 <h1 style="text-align: center">{{ title }}</h1>
 
 <form action="">
-  Ingrese el nombre:<input type="text" name="Nombre" [(ngModel)] = "nombre"/>
-  <br>
+  Ingrese el nombre:<input type="text" name="Nombre" [(ngModel)]="nombre" />
+  <br />
 
-  Ingrese el apellido:<input type="text" name="Apellido" [(ngModel)] = "apellido"/>
-  <br>
+  Ingrese el apellido:<input
+    type="text"
+    name="Apellido"
+    [(ngModel)]="apellido"
+  />
+  <br />
 
-  <input type="submit" value="Registrar" (click)="registrarUsuario()" >
+  Ingrese el cargo:<input type="text" name="cargo" [(ngModel)]="cargo" />
+  <br />
+
+  <input type="submit" value="Registrar" (click)="registrarUsuario()" />
 </form>
-<br>
-<!-- Interpolamos el mensaje que el usuario se registró -->
-<p *ngIf="registrado">{{mensaje}}</p>
+<br />
+<!-- Interpolamos el mensaje que el usuario se registró, usamos un else con un tag sinRegistar   -->
+<!-- y lo asociamos a <ng-template #sinRegistrar> -->
+<p *ngIf="registrado; else sinRegistrar">
+  <!-- uso span parta incluir la directiva [ngStyle] que me va a modificar el estilo, es útil si quiero modificar solo un atributo -->
+  <!-- color: cargo == 'Director'? 'red' : 'black' => Si es Director va en color rojo el cargo, si no va en color negro-->
+  <!-- {{ mensaje }}, su cargo es: <span [ngStyle]="{ color: cargo == 'Director' ? 'red' : 'black' }">{{cargo}}</span> -->
+  
+  <!-- Si quiero modificar varias propiedades de estilo uso [ngClass] y un condicional -->
+  {{ mensaje }}, su cargo es: <span [ngClass]="{paraDirectores: cargo == 'Director'}">{{cargo}}</span>
+</p>
+
+<!-- Lo que está dentro de <ng-template> no carga por defecto, es como si no estuviese -->
+<ng-template #sinRegistrar>
+  <p>No hay usuario registrado</p>
+</ng-template>
+
+<!-- Creo el bucle for para presentar las entradas al blog usando *ngFor -->
+<!-- ver que i = indice guarda en i el número de indice de cada linea  -->
+<ul>
+  <li *ngFor="let entrada of entradas; let i = index">
+    Entrada Nº&#160;{{ i + 1 }}: &#160;{{ entrada.titulo }}
+  </li>
+</ul>
