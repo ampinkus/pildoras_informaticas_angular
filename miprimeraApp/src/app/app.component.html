@@ -1,12 +1,16 @@
- <span>{{ title }} se ejecuta bien como era de esperarse!</span>
- <br>
- <!-- La frase que se reemplaza en saludo viene de la definición de: saludo = 'Hola Angular'  en app.component.ts -->
- Saludo: {{saludo}}
- <br>
- <!-- Invoco el componente empleados a través de su selector --> 
- <app-empleados></app-empleados>
-<br>
+<!-- Vengo del componente app.component.ts  donde las lineas:
+    templateUrl: './app.component.html',  
+    styleUrls: ['./app.component.css'] 
+me indican que  esta página html es el inicio de mi pagina WEB -->
 
-  
-
-   
+<span
+  >{{ title }} {{ subtitle }} se ejecuta bien como era de esperarse! ( por
+  suerte)</span
+>
+<br />
+<!-- La frase que se reemplaza en saludo viene de la definición de: saludo = 'Hola Angular'  en app.component.ts -->
+Saludo: {{ saludo }}
+<br />
+<!-- Invoco el componente empleados a través de su selector -->
+<app-empleados></app-empleados>
+<br />
