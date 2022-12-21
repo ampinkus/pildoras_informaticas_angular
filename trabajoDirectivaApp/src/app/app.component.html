@@ -20,12 +20,15 @@
 <!-- Interpolamos el mensaje que el usuario se registró, usamos un else con un tag sinRegistar   -->
 <!-- y lo asociamos a <ng-template #sinRegistrar> -->
 <p *ngIf="registrado; else sinRegistrar">
-  <!-- uso span parta incluir la directiva [ngStyle] que me va a modificar el estilo, es útil si quiero modificar solo un atributo -->
+  <!-- uso span para incluir la directiva [ngStyle] que me va a modificar el estilo, es útil si quiero modificar solo un atributo -->
   <!-- color: cargo == 'Director'? 'red' : 'black' => Si es Director va en color rojo el cargo, si no va en color negro-->
   <!-- {{ mensaje }}, su cargo es: <span [ngStyle]="{ color: cargo == 'Director' ? 'red' : 'black' }">{{cargo}}</span> -->
-  
+
   <!-- Si quiero modificar varias propiedades de estilo uso [ngClass] y un condicional -->
-  {{ mensaje }}, su cargo es: <span [ngClass]="{paraDirectores: cargo == 'Director'}">{{cargo}}</span>
+  <!-- Ver que paraDirectores es una clase definida en CSS, si:  cargo == Director se aplica dicha clase  -->
+  <!-- use <span> para poner todo el condicional en la misma linea -->
+  {{ mensaje }}, su cargo es:
+  <span [ngClass]="{ paraDirectores: cargo == ('Director' )  }">{{ cargo }}</span>
 </p>
 
 <!-- Lo que está dentro de <ng-template> no carga por defecto, es como si no estuviese -->

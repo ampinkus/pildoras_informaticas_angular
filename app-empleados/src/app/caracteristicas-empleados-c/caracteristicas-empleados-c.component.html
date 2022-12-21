@@ -1,0 +1,7 @@
+
+<!-- Incluimos esto para pasar los datos del hijo al padre -->
+<label>Característica:</label>
+<!-- El texto que tipeamos aquí va a ir a la variable nuevaCaracteristica -->
+<input type="text" #nuevaCaracteristica> 
+<!-- Al hacer click en el boton llamamos la función agregaCaracteristica que toma el texto de nuevaCaracteristica como dato -->
+<button type="button" (click)="agregaCaracteristicas(nuevaCaracteristica.value)" class="btn btn-primary">Añadir característica: </button>

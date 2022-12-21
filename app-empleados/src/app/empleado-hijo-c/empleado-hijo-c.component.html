@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div>
+        <!-- Los datos a presentar los recibo del padre -->
+        <!-- Ver que despues de }} si hago un espacio agrega uno solo en blanco -->
+        <!-- Ver que cambié i por indice y empleado por empleadoDeLista -->
+        Nº:{{ indice + 1 }} {{ empleadoDeLista.nombre }} {{ empleadoDeLista.apellido }}
+        {{ empleadoDeLista.cargo }} {{ empleadoDeLista.salario }}
+      </div>
+      <!-- Invoco el componente caracteristicas-empleados-c y uso la funcion agregarCaracteristicas -->
+      <app-caracteristicas-empleados-c (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleados-c>
+
+      <ul style="list-style: none;">
+        <!-- Presento las caracteristicas de cada empleado -->
+        <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 

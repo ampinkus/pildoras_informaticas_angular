@@ -14,8 +14,7 @@ export class AppComponent {
   cargo: string = '';
   entradas: any = []; // para guardar los títulos de los blogs, uso "any" porque "object" me da error
 
-  constructor() {
-    // constructor para cargar las entradas
+  constructor() {  // constructor para cargar las entradas
     this.entradas = [
       { titulo: 'Python presente' },
       { titulo: 'Java presente' },
